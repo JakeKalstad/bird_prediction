@@ -18,8 +18,3 @@ class MLFlask(Flask):
     def run(self, host="127.0.0.1", port=9876, debug=None,  **options):
         super(MLFlask, self).run(host=host, port=port,
                                  debug=debug,  **options)
-
-
-app = MLFlask(__name__)
-if __name__ == '__main__':
-    app.run()
