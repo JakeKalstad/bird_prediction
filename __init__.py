@@ -1,13 +1,5 @@
 from flask.app import Flask
-from PIL import Image
 import torch
-from torch import nn
-from torchvision import models
-
-from torchvision import transforms
-import faulthandler
-
-faulthandler.enable()
 
 
 def read_model():
@@ -23,9 +15,9 @@ def read_model():
 class MLFlask(Flask):
     model = read_model()
 
-    def run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
-        super(MLFlask, self).run(host=host, port=port,
-                                 debug=debug, load_dotenv=load_dotenv, **options)
+    def run(self, host=None, port=None, debug=None,  **options):
+        super(MLFlask, self).run(host=host, port=9876,
+                                 debug=debug,  **options)
 
 
 app = MLFlask(__name__)
